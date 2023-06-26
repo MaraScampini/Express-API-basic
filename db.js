@@ -1,5 +1,5 @@
 // Necesito usar el archivo config para acceder a las credenciales de mi base de datos
-const config = require('./config/config.json');
+const config = require('./config/config.js');
 // Instancio sequelize para poder hacer la conexión con la BBDD y trabajar sobre ella
 const { Sequelize } = require('sequelize');
 
