@@ -8,6 +8,9 @@ const userRoutes = require('./views/userRoutes')
 // localhost:PORT/auth/... (aquí al final irá la ruta concreta)
 router.use('/auth', authRoutes);
 router.use('/user', userRoutes)
+router.use('/', () => {
+    return 'Hola'
+})
 
 // Exporto las rutas que he creado para poder utilizarlas en el index.js
 module.exports = router;
