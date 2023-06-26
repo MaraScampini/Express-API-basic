@@ -48,7 +48,8 @@ authController.login = async (req, res) => {
       });
       // Si no encuentro un usuario al hacer esto, tiro un error de credenciales incorrectas
       if (!userFound) {
-        return res.json({
+        
+        return res.status(500).json({
           success: true,
           message: "Wrong credentials",
         });
@@ -58,7 +59,7 @@ authController.login = async (req, res) => {
   
       // Si las contraseñas no coinciden, devolvemos error de credenciales incorrectas. Por seguridad, damos un error genérico en vez de decir al usuario si lo que está poniendo mal es el email o la contraseña.
       if (!correctPassword) {
-        return res.json({
+        return res.status(401).json({
           success: true,
           message: "Wrong credentials",
         });
