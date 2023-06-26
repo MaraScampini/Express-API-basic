@@ -10,7 +10,7 @@ const auth = (req, res, next) => {
     // Si no existe cabecera de autenticación, directamente denegamos el paso.
     if (!bearerToken) {
       return res.json({
-        succes: true,
+        success: true,
         message: "No estás autorizado",
       });
     }
@@ -23,6 +23,7 @@ const auth = (req, res, next) => {
     // Aquí estoy AÑADIENDO al objeto req, al que voy a tener acceso en todas las peticiones, los campos de userId y roleId que contenía mi token (recordemos que al crear el token yo le he indicado qué campos de la tabla de usuario debe contener y bajo qué nombre, en este caso userId = user.id, roleId = user.role_id)
     req.userId = decoded.userId;
     req.roleId = decoded.roleId;
+    req.name = decoded.username
 
     // Ejecuto el método next para dejar paso al siguiente controlador. Si las cosas no han ido bien habré llegado anteriormente a un return, por lo que no llegaría en ningún caso hasta esta línea.
     next();
