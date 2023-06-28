@@ -1,27 +1,27 @@
 const config = {
   "development": {
     "username": "root",
-    "password": "Bs7tyLIfUkTv39E1kapi",
+    "password": "d4diMpHMsYDKkEOZVEnP",
     "database": "railway",
-    "host": "containers-us-west-130.railway.app",
+    "host": "containers-us-west-129.railway.app",
     "dialect": "mysql",
-    "port":7286
+    "port":6705
   },
   "test": {
     "username": "root",
-    "password": "Bs7tyLIfUkTv39E1kapi",
+    "password": "d4diMpHMsYDKkEOZVEnP",
     "database": "railway",
-    "host": "containers-us-west-130.railway.app",
+    "host": "containers-us-west-129.railway.app",
     "dialect": "mysql",
-    "port":7286
+    "port":6705
   },
   "production": {
     "username": "root",
-    "password": "Bs7tyLIfUkTv39E1kapi",
+    "password": "d4diMpHMsYDKkEOZVEnP",
     "database": "railway",
-    "host": "containers-us-west-130.railway.app",
+    "host": "containers-us-west-129.railway.app",
     "dialect": "mysql",
-    "port":7286
+    "port":6705
   }
 }
 
