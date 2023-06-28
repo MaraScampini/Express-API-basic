@@ -9,7 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       models.user.belongsToMany(models.book, {
         through: "favorites",
         foreignKey: "user_id",
-      });
+      }),
+      models.user.hasMany(models.appointment,{
+        foreignKey: 'user_id'
+      })
     }
   }
   user.init(

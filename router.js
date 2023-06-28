@@ -4,12 +4,14 @@ const router = require('express').Router();
 const authRoutes = require('./views/authRoutes')
 const userRoutes = require('./views/userRoutes')
 const bookRoutes = require('./views/bookRoutes')
+const apptRoutes = require('./views/apptRoutes')
 
 // Enruto utilizando esas rutas que me estoy trayendo desde authRoutes y las paso por la pre-URL /auth. Esto significa que mi URL se estructurará de la siguiente manera:
 // localhost:PORT/auth/... (aquí al final irá la ruta concreta)
 router.use('/auth', authRoutes);
 router.use('/user', userRoutes)
 router.use('/books', bookRoutes)
+router.use('/appointments', apptRoutes)
 
 
 // Exporto las rutas que he creado para poder utilizarlas en el index.js
