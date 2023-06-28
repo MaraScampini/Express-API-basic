@@ -2,6 +2,15 @@ const {book} = require('../models')
 
 let bookController = {}
 
+bookController.getBooks = async (req, res) => {
+    let resp = await book.findAll()
+
+    res.json({
+        message: "Libros encontrados",
+        data: resp
+    })
+}
+
 bookController.addBook = async (req, res) => {
     let {title, genre} = req.body
 
