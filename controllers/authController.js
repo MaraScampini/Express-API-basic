@@ -46,7 +46,7 @@ authController.login = async (req, res) => {
           email: email,
         },
       });
-      // Si no encuentro un usuario al hacer esto, tiro un error de credenciales incorrectas
+      // Si no encuentro un usuario al hacer esto, tiro un error de credenciales incorrectas, sin especificar si es el usuario o la contraseña
       if (!userFound) {
         
         return res.status(500).json({
