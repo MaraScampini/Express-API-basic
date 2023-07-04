@@ -1,7 +1,7 @@
 // Recojo express para poder levantar un servidor
 const express = require("express")
 
-// Importo CORS
+// // Importo CORS
 const cors = require('cors');
 
 // Recojo la conexión a la base de datos que he hecho en el archivo db.js
@@ -13,8 +13,18 @@ const router = require('./router')
 // Creo mi aplicación a partir de la instanciación de express
 const app = express()
 
-// Uso la extensión CORS
-app.use(cors());
+let corsOptions = {
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  // methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  preflightContinue: false,
+  // allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",
+  optionsSuccessStatus: 204
+};
+app.use(cors(corsOptions));
+
+// // Uso la extensión CORS
+// app.use(cors());
 
 // Esto me permite utilizar bodys de tipo JSON - OJO, SIN ESTO NO FUNCIONARÁN LAS PETICIONES DE TIPO POST
 app.use(express.json());
